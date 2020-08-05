@@ -1,0 +1,96 @@
+/* miniprogram/pages/create/create.wxss */
+page {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+.header {
+  color: var(--color-p);
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+.back {
+  font-size: 1rem;
+}
+
+.card {
+  overflow: auto;
+  flex: 1;
+  background: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  margin: 1rem;
+}
+
+.form-item {
+  margin: .75rem;
+}
+.form-label {
+  color: var(--color-s);
+  font-size: 1.2rem;
+  line-height: 2;
+  display: inline;
+}
+.form-extra {
+  color: #939393;
+  font-size: .75rem;
+  display: inline;
+  margin-left: 1rem;
+}
+.form-input {
+  border-bottom: #ddd solid 1px;
+  line-height: 2;
+  padding: .5rem 0;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+}
+
+.form-inline .form-input {
+  text-align: center;
+  width: 10rem;
+  margin: .5rem 0;
+}
+.picker {
+  border-bottom: #ddd solid 1px;
+  margin: .5rem 0;
+  line-height: 2;
+  width: 10rem;
+  text-align: center;
+}
+.inline-label {
+  color: #939393;
+  width: 8rem;
+  font-size: 1rem;
+}
+
+.create {
+  background: var(--color-p);
+  width: 40vw;
+  height: 3.5rem;
+  font-size: .9rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30vw;
+
+  border-radius: 10px;
+  /* position: fixed; */
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.weui-uploader__hd {
+  float: right;
+  margin-top: -2rem;
+}

@@ -1,0 +1,43 @@
+@import "./style/font-awesome.wxss";
+
+/*增加`fa`样式*/
+.fa {
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  width: 1em;
+  white-space: pre;
+}
+/*增加`fa`样式*/
+.fas {
+  font-family: 'Font Awesome 5 Free Solid';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  width: 1em;
+  white-space: pre;
+  line-height: 1;
+}
+.m-r-05 {
+  margin-right: .5rem;
+}
+.m-r-1 {
+  margin-right: 1rem;
+}
+page {
+  font-size: 18px;
+  padding: 2rem 0 0 0;
+  background-color: #f7f7fd;
+  width: 100vw;
+  box-sizing: border-box;
+  --color-p: #6F9FFA;
+  --color-s: #7D7A9E;
+}

@@ -1,0 +1,108 @@
+page {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
+}
+.head {
+  margin: 0 1.5rem;
+}
+.card-list {
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: visible;
+  padding: 0 1.5rem 100px 1.5rem;
+}
+.header {
+  color: var(--color-p);
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+}
+.avatar {
+  background: #ddd;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+.tabbar {
+  margin-top: .8rem;
+  display: flex;
+  font-size: 1rem;
+  color: var(--color-s);
+}
+.tab.active::after {
+  content: ' ';
+  display: block;
+  width: 2rem;
+  margin: auto;
+  margin-top: .3rem;
+  border-bottom: 2px solid var(--color-s);
+}
+.tab + .tab {
+  margin-left: 1rem;
+}
+
+.card {
+  background: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin: 1rem 0rem;
+  display: flex;
+  padding: 1rem;
+}
+
+.card-left {
+  flex: 1;
+}
+.card-body {
+  display: flex;
+}
+.card-content {
+  margin-left: .4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.content {
+  font-size: .9rem;
+  color: var(--color-s);
+}
+.card-footer {
+  margin-top: .6rem;
+  font-size: .7rem;
+  color: var(--color-s);
+}
+
+.card-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-p);
+  font-weight: bold;
+}
+
+.create {
+  background: var(--color-p);
+  width: 40vw;
+  height: 3.5rem;
+  font-size: .9rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 30vw;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.acquire-privilege {
+  text-align: center;
+  color: var(--color-s);
+  padding: 20vh 0;
+}

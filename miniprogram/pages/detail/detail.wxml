@@ -1,0 +1,71 @@
+<view class="head">
+  <view class="header">
+    <view bindtap="handleBack" class="back">
+      <text class="fas">chevron-left</text>
+      返回列表
+    </view>
+    聚会助手
+  </view>
+</view>
+
+<view class="card" wx:if="{{meeting}}">
+  <view class="card-head">
+    <view class="card-left">
+      <view class="card-body">
+        <image src="{{meeting.creator[0].avatarUrl}}" class="avatar">
+        </image>
+        <view class="card-content">
+          <view class="title">
+            {{meeting.title}}
+          </view>
+          <view class="content">
+            <text class="fa m-r-05">clock</text>{{meeting.date}} {{meeting.time}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="card-action">
+      <text class="fa">user</text> {{meeting.joiner.length}}/{{meeting.limit}}
+    </view>
+  </view>
+  <view class="card-extra">
+    <view class="card-sub">聚会详情</view>
+    <view class="form-item">
+      <text class="form-label">发起人</text>
+      <text class="form-content">{{meeting.creator[0].nickName}}</text>
+    </view>
+    <view class="form-item">
+      <text class="form-label">发起时间</text>
+      <text class="form-content">{{meeting.createdAt}}</text>
+    </view>
+    <view class="form-item">
+      <text class="form-label">最大人数</text>
+      <text class="form-content">{{meeting.limit}}</text>
+    </view>
+    <view class="card-sub">聚会介绍</view>
+    <view class="meet-content">
+      {{meeting.content}}
+    </view>
+    <view class="meet-gallery">
+      <image src="{{item}}" class="meet-image" wx:for="{{meeting.images}}"></image>
+    </view>
+    <view class="card-sub">参与人员</view>
+    <view class="people" wx:for="{{meeting.joiner}}">
+      <image src="{{item.avatarUrl}}" class="avatar"/>
+      <view class="people-name">{{item.nickName}}</view>
+      <view class="people-at">于 {{item.joinedAt}} 报名参加</view>
+    </view>
+  </view>
+</view>
+
+<view class="control" wx:if="{{meeting.joined}}">
+  <button class="btn" bindtap="quitMeeting">取消报名</button>
+  <button class="btn-primary" open-type="share">分享聚会</button>
+</view>
+
+<view class="control" wx:if="{{!meeting.joined}}">
+  <view class="btn-primary" bindtap="joinMeeting" wx:if="{{logged}}">立即报名</view>
+  <button wx:if="{{!logged}}" class="btn-primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>
+
+

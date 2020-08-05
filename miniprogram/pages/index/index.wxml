@@ -1,0 +1,48 @@
+<view class="head">
+  <view class="header">
+    聚会助手
+  </view>
+  
+  <view class="tabbar">
+    <view bindtap="switchTab" data-tab="create" class="tab {{tab === 'create' ? 'active' : ''}}">
+      我发起的
+    </view>
+    <view bindtap="switchTab" data-tab="join" class="tab {{tab === 'join' ? 'active' : ''}}">
+      我参与的
+    </view>
+  </view>
+</view>
+
+<view class="card-list" wx:if="{{logged}}">
+  <navigator url="../detail/detail?id={{item._id}}" class="card" wx:for="{{meetings}}">
+    <view class="card-left">
+      <view class="card-body">
+        <image src="{{item.creator[0].avatarUrl}}" class="avatar">
+        </image>
+        <view class="card-content">
+          <view class="title">
+            {{item.title}}
+          </view>
+          <view class="content">
+            <text class="fa m-r-05">clock</text>{{item.date}} {{item.time}}
+          </view>
+        </view>
+      </view>
+      <view class="card-footer">
+        {{item.creator[0].nickName}}于 {{item.createdDisplay}} 发起的聚会
+      </view>
+    </view>
+    <view class="card-action">
+      报名<text class="fas"> chevron-right</text>
+    </view>
+  </navigator>
+</view>
+
+<view class="acquire-privilege" wx:if="{{!logged}}">
+  <text>你需要授权才能继续使用聚会助手</text>
+</view>
+
+<button wx:if="{{!logged}}" class="create" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<navigator url="../create/create" class="create" wx:if="{{logged}}">
+  新建聚会
+</navigator>
