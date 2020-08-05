@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/create/create"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发实战-聚会助手",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

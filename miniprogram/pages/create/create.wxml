@@ -1,0 +1,50 @@
+<view class="head">
+  <view class="header">
+    <navigator open-type="navigateBack" class="back">
+      <text class="fas">chevron-left</text>
+      返回主页
+    </navigator>
+    发起聚会
+  </view>
+</view>
+
+<view class="card">
+  <view class="form-item">
+    <view class="form-label">聚会名称</view>
+    <view class="form-extra">好的名称才会有更多人参与哦</view>
+    <input bindinput="nameInput" class="form-input" placeholder="一起吃个饭"></input>
+  </view>
+  <view class="form-item">
+    <view class="form-label">聚会内容</view>
+    <view class="form-extra">说说要干嘛</view>
+    <input bindinput="contentInput" class="form-input" placeholder="聊一聊云开发的妙处"></input>
+  </view>
+  <view class="form-item">
+    <view class="form-label">聚会封面</view>
+    <view class="form-extra">有图有真相</view>
+    <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uploadFile}}" files="{{files}}" max-count="5" title=""></mp-uploader>
+  </view>
+  <view class="form-item">
+    <view class="form-label">聚会设置</view>
+    <view class="form-inline">
+      <view class="inline-label">聚会日期</view>
+      <picker bindchange="dateInput" mode="date" value="{{date}}">
+        <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+    <view class="form-inline">
+      <view class="inline-label">聚会时间</view>
+      <picker bindchange="timeInput" mode="time" value="{{time}}">
+        <view class="picker">{{time}}</view>
+      </picker>
+    </view>
+    <view class="form-inline">
+      <view class="inline-label">最大参与人数</view>
+      <input bindinput="limitInput" value="{{limit}}" class="form-input" type="number"></input>
+    </view>
+  </view>
+</view>
+
+<button bindtap="createMeet" class="create">
+  新建聚会
+</button>

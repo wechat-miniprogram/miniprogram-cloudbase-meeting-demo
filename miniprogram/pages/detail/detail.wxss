@@ -1,0 +1,162 @@
+page {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.header {
+  color: var(--color-p);
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+.back {
+  font-size: 1rem;
+}
+
+.avatar {
+  background: #ddd;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.card {
+  overflow: hidden;
+  flex: 1;
+  background: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+}
+.card-head {
+  display: flex;
+}
+.card-left {
+  flex: 1;
+}
+.card-body {
+  display: flex;
+}
+.card-content {
+  margin-left: .4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.content {
+  font-size: .9rem;
+  color: var(--color-s);
+}
+.card-footer {
+  margin-top: .6rem;
+  font-size: .7rem;
+  color: var(--color-s);
+}
+
+.card-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-s);
+  /* font-weight: bold; */
+}
+.card-extra {
+  border-top: 1px solid #efefef;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  flex: 1;
+  overflow: auto;
+}
+.card-sub:nth-child(1) {
+  margin-top: 0;
+}
+.card-sub {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-s);
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.form-item {
+  margin: .5rem;
+  font-size: 1rem;
+  color: var(--color-s);
+}
+
+.form-label {
+  font-weight: bold;
+  width: 5rem;
+  display: inline-block;
+}
+.meet-gallery {
+  overflow: auto;
+  white-space: nowrap;
+}
+.meet-image{
+  background: #ddd;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  display: inline-block;
+}
+.people {
+  display: block;
+  clear: both;
+  margin-bottom: .6rem;
+  line-height: 1.6;
+}
+.people .avatar{
+  float: left;
+  margin-right: .8rem;
+}
+.people-name {
+  color: var(--color-s);
+}
+.people-at {
+  color: #848484;
+  font-size: .8rem;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.btn-primary {
+  background: var(--color-p);
+  width: 100%;
+  height: 3.5rem;
+  font-size: .9rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+.btn {
+  background: white;
+  width: 100%;
+  height: 3.5rem;
+  font-size: .9rem;
+  color: var(--color-p);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-right: 2rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
