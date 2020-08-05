@@ -23,69 +23,12 @@ const _ = db.command
 const meetingHelper = {
   async createMeeting(context, params) {
     // implement me
-    const doc = await db.collection('meetings').add({
-      data: {
-        title: params.title,
-        content: params.content,
-        date: params.date,
-        time: params.time,
-        limit: params.limit,
-        joiner: [],
-        images: params.images,
-        createdAt: Date.now(),
-        updateAt: Date.now(),
-        createdBy: context.OPENID,
-      }
-    })
-
-    return {
-      doc
-    }
+    
+    return {}
   },
   async joinMeeting(context, params) {
     // implement me
-    const meet = await db.collection('meetings').where({
-      _id: params.id
-    }).get()
-    const [meeting] = meet.data
-    const userdoc = await db.collection('users').where({
-      openid: context.OPENID
-    }).get()
-    const [user] = userdoc.data
-    meeting.joiner.push({
-      ...user,
-      joinedAt: Date.now()
-    })
-    delete meeting._id
-    try {
-      const result = await cloud.openapi.subscribeMessage.send({
-        touser: context.OPENID, // 通过 getWXContext 获取 OPENID
-        data: {
-          thing1: {
-            value: meeting.title
-          },
-          thing2: {
-            value: meeting.content
-          },
-          date3: {
-            value: `${meeting.date} ${meeting.time}`
-          },
-          thing4: {
-            value: '请准时参加哦'
-          }
-        },
-        templateId: '',//TODO FIXME 填入你自己的 TemplateID
-        page: 'index'
-      })
-      console.log(result)
-    } catch (error) {
-      console.log(error)
-    }
-    await db.collection('meetings').where({
-      _id: params.id
-    }).update({
-      data: meeting
-    })
+    
     return {}
   },
 
