@@ -49,7 +49,7 @@ Page({
   },
   async uploadFile(params) {
     const files = params.tempFiles
-    // implement me: uplaod file
+    // implement me: upload file
     for (let index = 0; index < files.length; index++) {
       const file = files[index];
       const filePath = file.path
